@@ -11,7 +11,7 @@ import './plugins/socketPlugin'
 import Directives from './plugins/directives'
 import io from 'socket.io-client'
 import VueLocalStorage from 'vue-localstorage'
- 
+import * as VueGoogleMaps from 'vue2-google-maps'
 
 //const socket = io('http://218.38.52.30:3030')
 
@@ -21,9 +21,15 @@ Vue.config.productionTip = false
 
 Vue.use(VueLocalStorage)
 
+Vue.use(VueGoogleMaps, {
+	load: {
+		key : 'AIzaSyAtklZKHLEyu7tk99NLu7K3V6HjLXUIRKk',
+		libraries : 'places'
+		//libraries : 'places,drawing,visualization'
+	}
+})
 
 /* eslint-disable no-new */
-
 
 //Vue.use(Chat)
 Vue.prototype.$serverIp = 'http://218.38.52.30:3030'
